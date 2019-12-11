@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
 
+        webView.addJavascriptInterface(new MyBrad(), "brad");
+
         //webView.loadUrl("https://www.iii.org.tw");
         webView.loadUrl("file:///android_asset/brad.html");
     }
