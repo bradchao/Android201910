@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
     public class MyBrad {
         @JavascriptInterface
-        public void callFramJS() {
-            Log.v("brad", "i got it");
+        public void callFramJS(String name) {
+            Log.v("brad", "i got it => " + name);
         }
     }
 

@@ -9,7 +9,8 @@
         $('#here').html(rand);
     }
     function test1(){
-        brad.callFramJS();
+        let urname = document.getElementById('urname').value;
+        brad.callFramJS(urname);
     }
 
 </script>
@@ -18,6 +19,7 @@
 Hello, Brad
 <img src="imgs/android.png">
 <button type="button" class="btn btn-primary" onclick="doHere(1)">Primary</button>
+<input type="text" id="urname">
 <button type="button" class="btn btn-info" onclick="test1()">Brad</button>
 <div id='here'></div>
 <hr />
