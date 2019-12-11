@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new MyBrad(), "brad");
 
         //webView.loadUrl("https://www.iii.org.tw");
-        webView.loadUrl("file:///android_asset/brad.html");
+        webView.loadUrl("file:///android_asset/map.html");
     }
 
     @Override
