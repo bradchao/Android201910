@@ -24,4 +24,13 @@ public class MainActivity extends AppCompatActivity {
 
         webView.loadUrl("https://www.iii.org.tw");
     }
+
+    @Override
+    public void onBackPressed() {
+        if (webView.canGoBack()){
+            webView.goBack();
+        }else {
+            super.onBackPressed();
+        }
+    }
 }
