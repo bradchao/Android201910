@@ -6,7 +6,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +23,8 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
     private WebView webView;
     private EditText lottery;
+    private LocationManager lmgr;
+    private MyListener myListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +53,49 @@ public class MainActivity extends AppCompatActivity {
         lottery = findViewById(R.id.lottery);
         webView = findViewById(R.id.webView);
         initWebView();
+
+        lmgr = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        myListener = new MyListener();
+        lmgr.requestLocationUpdates(
+                LocationManager.GPS_PROVIDER,0,0,myListener);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        lmgr.removeUpdates(myListener);
+    }
+
+    private class MyListener implements LocationListener {
+
+        @Override
+        public void onLocationChanged(Location location) {
+
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(String provider) {
+
+        }
+    }
+
 
     private void initWebView(){
         WebViewClient client = new WebViewClient();
