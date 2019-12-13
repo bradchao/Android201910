@@ -28,6 +28,13 @@
           zoom: 15
         });
       }
+
+    function moveToLocation(lat, lng){
+      const center = new google.maps.LatLng(lat, lng);
+      // using global variable:
+      map.panTo(center);
+    }
+
     </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXoiXs2_MSFilh0wJobj3ZxJoDQzMQzxU&callback=initMap"
         async defer></script>
