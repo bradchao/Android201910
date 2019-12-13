@@ -77,7 +77,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onLocationChanged(Location location) {
-
+            double lat = location.getLatitude();
+            double lng = location.getLongitude();
+            Log.v("brad", lat + " , " + lng);
         }
 
         @Override
